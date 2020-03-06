@@ -33,8 +33,15 @@
                     {{user}}
                 </a>
             </li>
+            {% if user.is_superuser %}
             <li class="nav-item">
-                <a class="nav-link white_text" href="#">지원하기</a>
+                <a class="nav-link active white_text" href="{% url 'tjh_show_apply'%}">
+                   지원서보기
+                </a>
+            </li>
+            {%endif%}
+            <li class="nav-item">
+                <a class="nav-link white_text" href="{% url 'apply' %}">지원하기</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link white_text" href="{% url 'logout' %}">로그아웃</a>

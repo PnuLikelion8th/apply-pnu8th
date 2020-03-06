@@ -27,4 +27,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name="logout"),
     # path('account_main', apply_pnu.views.account_main, name="account_main"),
     path('apply/', apply_pnu.views.Apply.as_view(),name="apply"),
+    path('cajsdvkuwqjnuxnehhb/', apply_pnu.views.ApplyList.as_view(), name="tjh_show_apply"),
+
 ]
