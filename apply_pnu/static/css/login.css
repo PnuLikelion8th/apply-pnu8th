@@ -1,0 +1,241 @@
+
+.rg_bg{
+    height:550px;
+    width:100%;
+    padding : 10% 0;
+    display: block;
+
+}
+
+
+.rg_form{
+    width:500px;
+    height: 550px;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 0px 10px 3px rgba(0,0,0,0.05) ;
+
+}
+
+.rg_title{
+    margin-top: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.rg_title > img{
+    width: 210px;
+}
+
+
+.rg_subtitle{
+    /* border:1px solid red; */
+    text-align: center;
+    /* font-family: 'nanumsquareround_B'; */
+    margin-bottom:30px;
+    font-size:0.85rem;
+}
+
+.accounts_naver{
+    background-color: #27b13a;
+    padding:20px;
+    border-radius: 15px;
+    width:300px;
+    /* text-align: center; */
+    color:white;
+    margin:20px auto;
+    display: block;
+}
+.accounts_google{
+    cursor: pointer;
+    background-color: #e23434;
+    padding:20px;
+    border-radius: 15px;
+    width:300px;
+    /* text-align: center; */
+    color:white;
+    margin:20px auto;  
+    display: block;
+
+}
+.accounts_email{
+    background-color: #0d0d18;
+    padding:20px;
+    border-radius: 15px;
+    width:300px;
+    /* text-align: center; */
+    color:white;
+    margin:20px auto;  
+    display: block;
+
+}
+
+
+.accounts_naver > div,
+.accounts_google > div,
+.accounts_email > div,
+.accounts_login > div{
+    color:white;
+    display: inline-block;
+}
+.rg_form >a>img{
+    width: 15px;
+    margin-right: 15px;
+    margin-left: 50px;
+}
+
+
+.link_regist{
+    /* border:1px solid blue; */
+    margin-top:20px;
+    text-align: center;
+    font-size:0.85rem;
+}
+.link_regist > a,
+.forget_idpw > a{
+    text-decoration-line: underline;
+    text-decoration-color: #309ee7;  ;
+    color:#309ee7;
+}
+.forget_idpw{
+    /* border:1px solid green; */
+    margin:10px auto; 
+    text-align: center;
+    font-size:0.85rem;
+}
+
+.privacy_policy{
+    /* border:1px solid red; */
+    display: block;
+    margin:20px auto;
+    width:150px;
+    text-align: center;
+    text-decoration-line: underline;
+    color:#777;
+}
+
+
+
+
+
+/* 로그인.html 화면 */
+.lg_title{
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 100px 0 60px 0;
+}
+.username_input{
+    display: block;
+    margin: 30px auto;
+    width: 300px;
+    border: none;
+    border-bottom: 1px #dddddd solid;
+    outline: none;
+    padding: 10px;
+
+
+}
+.password_input{
+    display: block;
+    margin: 30px auto;
+    width: 300px;
+    border: none;
+    border-bottom: 1px #dddddd solid;
+    outline: none;
+    padding: 10px;
+    color: black;
+}
+
+.accounts_login{
+    background-color: #0d0d18;
+    padding:15px;
+    border-radius: 15px;
+    width:300px;
+    /* text-align: center; */
+    color:white;
+    margin:40px auto 50px;  
+    display: block;
+    font-family: 'nanumsquare_R';
+
+}
+
+.errorlist{
+    display: block;
+    color:red;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+/* 비밀번호 찾기 */
+
+.fp_form{
+    width:500px;
+    height: 350px;
+    position: absolute;
+    margin: 100px auto 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 0px 10px 3px rgba(0,0,0,0.05) ;
+
+}
+
+
+.fp_title{
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 65px 0 60px 0;
+}
+
+.fp_err_msg{
+    display: block;
+    color:red;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+@media (max-width:550px){
+    .rg_title{
+        margin-top: 40px;
+    }
+    div> .lg_title{
+        margin-top: 40px;
+    }
+    
+    .rg_bg{
+        background-color: white;
+    }
+    .rg_form{
+        width: 100%;
+        box-shadow: none;
+    }
+    .fp_form{
+        width: 100%;
+        margin-top: 50px;
+        box-shadow: none;;
+    }
+
+}
+@media (max-width:400px){
+    .rg_form > .accounts_naver{
+        padding: 20px 0;
+    }
+    .rg_form > .accounts_google{
+        padding: 20px 0;
+    }
+    .rg_form > .accounts_email{
+        padding: 20px 0;
+    }
+}
