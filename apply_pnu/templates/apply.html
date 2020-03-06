@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+PNULikeLion-applyform
+{% endblock %}
+
+{% block extra_head %}
+<link rel="Stylesheet" type="text/css" href="{% static 'css/apply.css' %}?dt={% now 'U' %}">
+
+{% endblock %}
+
+
+{% block contents %}
+어플라이 폼
+<form method="POST" enctype="multipart/form-data">
+    {% for i in form%}
+    {{i.label}}<br>
+    {{i}}<br>
+
+</form>
+{%endfor%}
+{% endblock %}

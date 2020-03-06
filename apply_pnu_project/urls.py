@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login', apply_pnu.views.PnuLogin.as_view(), name="login"),
 
+    # path('account_main', apply_pnu.views.account_main, name="account_main"),
+    path('apply/', apply_pnu.views.Apply.as_view(),name="apply"),
 ]

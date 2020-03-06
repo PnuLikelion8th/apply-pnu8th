@@ -1,22 +1,57 @@
-from django.forms import ModelForm
-from .models import ApplyForm
+from .models import ApplyForm, Profile
+from django import forms
+from django.contrib.auth.models import User
 
-class ApplyFormForm(ModelForm):
+
+class ApplyFormForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # self.fields['title'].widget.attrs.update(
-        #     {'placeholder': "제목",
-        #      'class': 'enroll_title',
-        #      'autocomplete':'off'})
-        # self.fields['body'].widget.attrs.update(
-        #     {'placeholder': '새로 만나게 될 딩가육아 동지에게 간단한 소개를 적어주세요!',
-        #      'class': 'enroll_body',})
-        
 
+        self.fields['introduce'].widget.attrs.update(
+            {'placeholder': "",
+             'class': 'form-control custom_textarea',})
+
+        self.fields['position'].widget.attrs.update(
+            {'placeholder': "",
+             'class': 'form-control custom_textarea', })
+
+        self.fields['goal'].widget.attrs.update(
+            {'placeholder': "",
+             'class': 'form-control custom_textarea', })
+
+        self.fields['plan'].widget.attrs.update(
+            {'placeholder': "",
+             'class': 'form-control custom_textarea', })
+
+        self.fields['team'].widget.attrs.update(
+            {'placeholder': "",
+             'class': 'form-control custom_textarea',})
+
+        self.fields['concept'].widget.attrs.update(
+            {'placeholder': "",
+             'class': 'form-control custom_textarea',})
+
+        self.fields['portfolio'].widget.attrs.update(
+            {'placeholder': "",
+             'class': 'form-control custom_textarea',})
+
+        self.fields['interview'].widget.attrs.update(
+            {'placeholder': "",
+             'class': 'form-control custom_textarea',})
+
+        self.fields['experience'].widget.attrs.update(
+            {'placeholder': "",
+             'class': 'form-control custom_textarea',})
+
+        self.fields['schedule'].widget.attrs.update(
+                 {'placeholder': "",
+                  'class': 'form-control custom_textarea', })
+
+    
     class Meta:
         model = ApplyForm
-        fields = ('inroduce', 'position', 'goal', 'plan','team','concept','portfolio','interview','experience','schedule',)
+        fields = ('introduce', 'position', 'goal', 'plan','team','concept','portfolio','interview','experience','schedule',)
         
 
 
@@ -140,3 +175,5 @@ class LoginForm(AuthenticationForm):
         ),
     }
 
+    fields = ('introduce', 'position', 'goal', 'plan','team','concept','portfolio','interview','experience','schedule',)
+        
