@@ -38,18 +38,11 @@ def signup(request):
     return render(request, 'signup.html',{'RegisterForm':registerform})
 
 
-
-# def profile(request):
-#     profile = Profile.objects.filter(user_id=request.user)
-    
-#     return render(request, 'profile.html', {'profile': profile})
-
 class PnuLogin(LoginView):
     template_name = 'login.html'
     authentication_form = LoginForm
 
     def get_success_url(self):
-        # 프로필이 업데이트 되지 않은 회원은 업데이트 화면으로 리다이렉션 
         if not self.request.user.profile.name:    
             url = "/profile_update/"
             return url
@@ -61,10 +54,9 @@ class PnuLogin(LoginView):
         
         return resolve_url(settings.LOGIN_REDIRECT_URL)
    
-
-
 def login(request):
     return render(request, 'login.html')
+
 class Apply(CreateView):
     form_class = ApplyFormForm
     template_name = 'apply.html'

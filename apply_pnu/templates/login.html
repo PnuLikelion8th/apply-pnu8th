@@ -1,6 +1,33 @@
-<form method="POST" action="{% url 'login' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="로그인" class="accounts_login">
-</form>
-<div class="link_regist">아이디가 없으신가요? <a href="{% url 'signup' %}">회원가입</a></div>
+
+
+
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+PNULikeLion-login
+{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}?dt={% now 'U' %}">
+{% endblock %}
+
+
+{% block contents %}
+
+<div class="rg_bg">
+    <div class="rg_form">  
+        <div class="lg_title">이메일로 로그인하기</div>
+
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="로그인" class="accounts_login">
+        </form>
+        <div class="link_regist">아이디가 없으신가요? <a href="{% url 'signup' %}">회원가입</a></div>
+    </div>
+</div>
+
+{% endblock %}
