@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+PNULikeLion-apply_list
+{% endblock %}
+
+{% block extra_head %}
+<link rel="Stylesheet" type="text/css" href="{% static 'css/apply_list.css' %}?dt={% now 'U' %}">
+
+{% endblock %}
+
+
+{% block contents %}
+지원서 목록
+{% for i in apply_all%}
+    
+    <div class="card custom_card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">{{i}}</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+        </div>
+    </div>
+   
+
+
+    {%endfor%}
+
+{% endblock %}

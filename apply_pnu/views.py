@@ -3,9 +3,10 @@ from django.contrib.auth.views import LoginView
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib import auth
-from .models import Profile
+from .models import Profile,ApplyForm
 from .forms import RegisterForm, ProfileForm, LoginForm
 from django.conf import settings
+from django.urls import reverse_lazy
 
 
 
@@ -68,9 +69,14 @@ def login(request):
 class Apply(CreateView):
     form_class = ApplyFormForm
     template_name = 'apply.html'
-    success_url = 'index'
+    success_url = reverse_lazy('index')
 
-    # def get(self, request, *args, **kwargs):
+
+class ApplyList(ListView):
+    template_name = "apply_list.html"
+    context_object_name = "apply_all"
+    model = ApplyForm
+# def get(self, request, *args, **kwargs):
     #     if self.request.user.is_authenticated:
     #         if self.request.user.profile.nickname == "":
     #             return redirect('profile_update')

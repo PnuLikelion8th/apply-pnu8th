@@ -14,10 +14,14 @@ PNULikeLion-applyform
 {% block contents %}
 어플라이 폼
 <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
     {% for i in form%}
     {{i.label}}<br>
     {{i}}<br>
 
-</form>
+
 {%endfor%}
+    <input type="submit" value="제출">
+</form>
+
 {% endblock %}
