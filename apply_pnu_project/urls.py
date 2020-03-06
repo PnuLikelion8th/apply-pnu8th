@@ -16,11 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import apply_pnu.views
+from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('', apply_pnu.views.index, name="index"),
     path('admin/', admin.site.urls),
     path('login', apply_pnu.views.PnuLogin.as_view(), name="login"),
-
+    path('signup', apply_pnu.views.signup, name ="signup"),
+    path('profile_update', apply_pnu.views.profile_update, name ="profile_update"),
+    
+    path('logout/', auth_views.LogoutView.as_view(), name="logout"),
     # path('account_main', apply_pnu.views.account_main, name="account_main"),
     path('apply/', apply_pnu.views.Apply.as_view(),name="apply"),
 ]

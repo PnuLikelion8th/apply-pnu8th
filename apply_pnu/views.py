@@ -18,7 +18,7 @@ def index(request):
 
 
 
-def register(request):
+def signup(request):
     if request.method == 'POST':
         registerform = RegisterForm(request.POST)
         if registerform.is_valid():
@@ -39,10 +39,10 @@ def register(request):
 
 
 
-def profile(request):
-    profile = Profile.objects.filter(user_id=request.user)
+# def profile(request):
+#     profile = Profile.objects.filter(user_id=request.user)
     
-    return render(request, 'profile.html', {'profile': profile})
+#     return render(request, 'profile.html', {'profile': profile})
 
 class PnuLogin(LoginView):
     template_name = 'login.html'
@@ -50,7 +50,7 @@ class PnuLogin(LoginView):
 
     def get_success_url(self):
         # 프로필이 업데이트 되지 않은 회원은 업데이트 화면으로 리다이렉션 
-        if not self.request.user.profile.nickname:    
+        if not self.request.user.profile.name:    
             url = "/profile_update/"
             return url
         else:
@@ -109,3 +109,31 @@ class Apply(CreateView):
 #         else:
 #             raise PermissionDenied
     
+
+
+
+def profile_update(request):
+    user = request.user
+    profile = user.profile
+    
+    profileform = ProfileForm(request.POST or None, instance=profile)
+
+    context = {'profileform': profileform,
+                    'profile': profile}
+
+    if request.method == 'POST':
+        if profileform.is_valid():
+            profile.save()  
+            print("세이브야!")
+            return redirect('index')
+        
+        else:
+            return render(request, 'profile_update.html', context)
+
+            
+    profileform = ProfileForm(instance=profile)
+    context = {'profileform': profileform, 'profile':profile}
+    
+
+    return render(request, 'profile_update.html', context)
+  

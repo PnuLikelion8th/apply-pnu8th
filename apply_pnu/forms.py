@@ -175,5 +175,3 @@ class LoginForm(AuthenticationForm):
         ),
     }
 
-    fields = ('introduce', 'position', 'goal', 'plan','team','concept','portfolio','interview','experience','schedule',)
-        
