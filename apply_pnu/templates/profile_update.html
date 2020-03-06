@@ -1,1 +1,6 @@
-여기서 프로필같은거 입력하면댐
+<h1>회원정보 업데이트 페이지</h1>
+<form method="POST" action="{% url 'profile_update' %}">
+    {% csrf_token %}
+    {{profileform}}
+    <input type="submit" value="확인">
+</form>
