@@ -31,7 +31,7 @@ class Profile(models.Model):
 from django.utils import timezone
 # Create your models here.
 class ApplyForm(models.Model):
-    # author = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
     introduce = models.TextField('자기소개', max_length=1000)
     position = models.TextField('역할상상', max_length=500)
     goal = models.TextField('목표', max_length=500)

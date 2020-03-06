@@ -17,6 +17,10 @@ from django.views.generic.edit import UpdateView, DeleteView
 from .forms import ApplyFormForm
 # Create your views here.
 def index(request):
+    all_user = ApplyForm.objects.all()
+
+    for i in all_user:
+        i.delete()
     return render(request, 'index.html')
 
 
