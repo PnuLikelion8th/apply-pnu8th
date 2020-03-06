@@ -1,0 +1,5 @@
+__pycache__/
+.config_secret/
+settings_base.json
+settings_development.json
+settings_production.json

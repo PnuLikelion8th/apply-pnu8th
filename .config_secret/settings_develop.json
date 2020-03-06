@@ -1,8 +1,0 @@
-{
-    "django": {
-        "allowed_hosts": [
-            "*"
-        ]
-       
-    }
-}
