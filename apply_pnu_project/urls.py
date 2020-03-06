@@ -19,4 +19,6 @@ import apply_pnu.views
 urlpatterns = [
     path('', apply_pnu.views.index, name="index"),
     path('admin/', admin.site.urls),
+    # path('account_main', apply_pnu.views.account_main, name="account_main"),
+
 ]
