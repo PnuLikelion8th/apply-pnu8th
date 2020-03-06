@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/* 초기화 */
+html,body{
+    margin:0;
+    padding:0;
+}
+
+/* 링크 데코레이션 none */
+a { text-decoration: none; color:black; }
+a:visited { text-decoration: none; color:black;}
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:hover, a:active { text-decoration: none; } 
+
+.white_text{
+    color:white !important;
+}
+footer{
+    border : 1px solid red;
+    background: black;
+    color:white;
+    text-align: center;
+    line-height: 2;
+    font-size:0.75rem;
+}
+nav > img {
+    height:50px;
+}
+.bg-dark {
+ background-color: black !important;
+}
