@@ -30,7 +30,7 @@ class Profile(models.Model):
     email = models.EmailField('이메일', max_length=254)
 from django.utils import timezone
 # Create your models here.
-class ApllyForm(models.Model):
+class ApplyForm(models.Model):
     # author = models.ForeignKey(Profile, on_delete=models.CASCADE)
     introduce = models.TextField('자기소개', max_length=1000)
     position = models.TextField('역할상상', max_length=500)
@@ -40,7 +40,7 @@ class ApllyForm(models.Model):
     concept = models.TextField('컨셉', max_length=500)
 
     portfolio = models.FileField('포폴', blank= True, upload_to='portfolio/')
-    interview = models.CharField('면접', max_length=255)
+    interview = models.TextField('면접', max_length=255)
     experience = models.TextField('경험', max_length=1000)
     schedule = models.TextField('고정스케줄', max_length=1000)
 
