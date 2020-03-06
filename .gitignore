@@ -3,3 +3,4 @@ __pycache__/
 settings_base.json
 settings_development.json
 settings_production.json
+db.sqlite3
