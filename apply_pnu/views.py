@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render,redirect
 from django.contrib.auth.views import LoginView
 from django import forms
@@ -7,6 +8,7 @@ from .models import Profile,ApplyForm
 from .forms import RegisterForm, ProfileForm, LoginForm
 from django.conf import settings
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 
 
 
@@ -72,8 +74,9 @@ class Apply(CreateView):
     success_url = reverse_lazy('index')
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name="get")
 class ApplyList(ListView):
-    template_name = "apply_list.html"
+    template_name="apply_list.html"
     context_object_name = "apply_all"
     model = ApplyForm
 # def get(self, request, *args, **kwargs):
