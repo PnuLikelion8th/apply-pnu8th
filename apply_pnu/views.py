@@ -64,26 +64,48 @@ class PnuLogin(LoginView):
 def login(request):
     return render(request, 'login.html')
 
-class Apply(CreateView):
-    form_class = ApplyFormForm
-    template_name = 'apply.html'
-    success_url = reverse_lazy('index')
+
+def apply(request):
+
+    if request.method =="POST":
+        temp_form = ApplyFormForm(request.POST)
+        if temp_form.is_valid():
+            print("밸리드")
+            print(request.POST)
+            temp_form.save()
+            print(temp_form)
+            return redirect('index')
+        else:
+            print("낫밸리드")
+            return redirect('apply')
+    else:
+        
+        return render(request, 'apply.html', {'form': ApplyFormForm()})
+# class Apply(CreateView):
+#     form_class = ApplyFormForm
+#     template_name = 'apply.html'
+#     success_url = reverse_lazy('index')
+
+#     def post(self, request, *args, **kwargs):
+        
+#         return super().get(request, *args, **kwargs)
 
 
-@method_decorator(user_passes_test(lambda u: u.is_superuser), name="get")
+
+# @method_decorator(user_passes_test(lambda u: u.is_superuser), name="get")
 class ApplyList(ListView):
     template_name="apply_list.html"
     context_object_name = "apply_all"
     model = ApplyForm
 # def get(self, request, *args, **kwargs):
-    #     if self.request.user.is_authenticated:
-    #         if self.request.user.profile.nickname == "":
-    #             return redirect('profile_update')
-    #         else:
-    #             self.object = None        
-    #             return super().get(request, *args, **kwargs)
-    #     else:
-    #         return redirect('login_main')
+#         if self.request.user.is_authenticated:
+#             if self.request.user.profile.nickname == "":
+#                 return redirect('profile_update')
+#             else:
+#                 self.object = None        
+#                 return super().get(request, *args, **kwargs)
+#         else:
+#             return redirect('login_main')
 
 
 # from django.urls import reverse

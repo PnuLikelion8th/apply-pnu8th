@@ -1,3 +1,10 @@
-.custom_textarea{
-    height:
+form .custom_textarea{
+    height: 150px;
+}
+.apply_label{
+    padding:20px 0 ;
+    font-size:1.1rem;
+}
+.none_display{
+    display: none;
 }

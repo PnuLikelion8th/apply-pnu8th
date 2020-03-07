@@ -7,7 +7,7 @@ class ApplyFormForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-
+        
         self.fields['introduce'].widget.attrs.update(
             {'placeholder': "",
              'class': 'form-control custom_textarea',})
@@ -51,7 +51,7 @@ class ApplyFormForm(forms.ModelForm):
     
     class Meta:
         model = ApplyForm
-        fields = ('introduce', 'position', 'goal', 'plan','team','concept','portfolio','interview','experience','schedule',)
+        fields = ('author','introduce', 'position', 'goal', 'plan','team','concept','portfolio','interview','experience','schedule',)
         
 
 

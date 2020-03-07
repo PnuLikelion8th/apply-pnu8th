@@ -30,13 +30,22 @@ PNULikeLion-applyform
 </div>
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
+    {{error}}
     {% for i in form%}
-    {{i.label}}<br>
-    {{i}}<br>
+    {%if i.label != "Author" %}
+    
+    <div class="apply_label">
+        {{forloop.counter0}} . {{i.label}}
+    </div>
+    {{i}}
+    {%else%}
+        <input type="text" name="author" value={{user.profile.id}}>
 
+    {%endif%}
 
 {%endfor%}
-    <button type="button" class="btn btn-dark">제출</button>
+    
+    <button type="submit" class="btn btn-dark">제출</button>
 </form>
 
 {% endblock %}
