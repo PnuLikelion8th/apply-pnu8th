@@ -28,10 +28,14 @@ class Profile(models.Model):
     phone_number = models.CharField('전화번호', max_length=20)
     m_or_f = models.CharField('성별', choices=M_or_F, max_length=2)
     email = models.EmailField('이메일', max_length=254)
+
+    def __str__(self):
+        return self.name
+
 from django.utils import timezone
 # Create your models here.
 class ApplyForm(models.Model):
-    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    author = models.OneToOneField(Profile, on_delete=models.CASCADE)
     introduce = models.TextField('자기소개 및 지원동기(최대 1000자)', max_length=1000)
     position = models.TextField('기획자/개발자/디자이너 중 가장 본인에게 가깝다고 생각하는 것을 고르고, 관련 근거를 서술하시오(최대 500자)', max_length=500)
     goal = models.TextField('코딩을 배워서 무엇을 하고 싶은지 구체적으로 서술하시오(최대 500자)', max_length=500)
