@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+PNULikeLion-apply_detail
+{% endblock %}
+
+{% block extra_head %}
+<link rel="Stylesheet" type="text/css" href="{% static 'css/apply_detail.css' %}?dt={% now 'U' %}">
+
+{% endblock %}
+
+
+{% block contents %}
+    <h1>내 지원서</h1>
+    <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{apply_one.author.name}}({{user}}/{{apply_one.author.m_or_f}})</li>
+            <li class="list-group-item">전공 : {{apply_one.author.major}}</li>
+            <li class="list-group-item">휴대폰 : {{apply_one.author.phone_number}}</li>
+            <li class="list-group-item">이메일 : {{apply_one.author.email}}</li>
+        </ul>
+    </div>
+    <button type="button" class="btn btn-dark">프로필 수정</button>
+
+    
+    <div class="">
+        {{apply_one.introduce}}
+    </div>
+    <div class="">
+        {{apply_one.position}}
+    </div>
+    <div class="">
+        {{apply_one.goal}}
+    </div>
+    <div class="">
+        {{apply_one.plan}}
+    </div>
+    <div class="">
+        {{apply_one.team}}
+    </div>
+    <div class="">
+        {{apply_one.concept}}
+    </div>
+    <div class="">
+        {{apply_one.portfolio}}
+    </div>
+    <div class="">
+        {{apply_one.interview}}
+    </div>
+    <div class="">
+        {{apply_one.experience}}
+    </div>
+    <div class="">
+        {{apply_one.schedule}}
+    </div>
+
+
+
+
+
+{% endblock %}

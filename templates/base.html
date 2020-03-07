@@ -36,16 +36,24 @@
                     {{user}}
                 </a>
             </li>
-            {% if user %}<!--is_superuser-->
+            {% if user.is_superuser %}
             <li class="nav-item">
                 <a class="nav-link active white_text" href="{% url 'tjh_show_apply'%}">
-                   지원서보기
+                   전체 지원서
+                </a>
+            </li>
+            {%endif%}
+            
+            {% if user.profile.applyform %}
+            <li class="nav-item">
+                <a class="nav-link active white_text" href="{% url 'apply_detail' user.profile.applyform.id %}">
+                    내 지원서
                 </a>
             </li>
             {%endif%}
             <li class="nav-item">
-                {%if user.profile.applyform_set.all %}
-                <a class="nav-link white_text" href="#">수정하기</a>
+                {%if user.profile.applyform %}
+                <a class="nav-link white_text" href="{% url 'apply_edit' user.profile.applyform.id %}">수정하기</a>
                 {%else%}
                 <a class="nav-link white_text" href="{% url 'apply' %}">지원하기</a>
                 {%endif%}
