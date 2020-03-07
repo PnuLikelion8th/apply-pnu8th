@@ -11,6 +11,9 @@ PNULikeLion-apply
 
 {% block contents %}
 
+
+
+
   <div id="home" class="intro route bg-image" style="background-image: url(img/intro-bg.jpg)">
     <div class="intro-content display-table">
       <div class="table-cell">
@@ -22,7 +25,30 @@ PNULikeLion-apply
       </div>
     </div>
   </div>
+  
+<section class="countdown-container">
 
+    <div class="days-container">
+        <div class="days"></div>
+        <div class="days-label">days</div>
+    </div>
+
+    <div class="hours-container">
+        <div class="hours"></div>
+        <div class="hours-label">hours</div>
+    </div>
+
+    <div class="minutes-container">
+        <div class="minutes"></div>
+        <div class="minutes-label">minutes</div>
+    </div>
+
+    <div class="seconds-container">
+        <div class="seconds"></div>
+        <div class="seconds-label">seconds</div>
+    </div>
+
+</section>
 <!-- <div class="black_sec"></div> -->
 <!-- <div class="main_list"> -->
     <!-- 홍보영상 -->
@@ -33,4 +59,6 @@ PNULikeLion-apply
 <div class="video_cont">
     <video src="{% static 'video/likelion_promt.mp4' %}" width="100%" loop="loop" muted controls autoplay></video>
 </div>
+
+
 {% endblock %}
