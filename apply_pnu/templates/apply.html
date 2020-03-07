@@ -12,7 +12,22 @@ PNULikeLion-applyform
 
 
 {% block contents %}
-어플라이 폼
+<h1>
+    현재 접속자
+</h1>
+<div>
+
+    <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{user.profile.name}}({{user}}/{{user.profile.m_or_f}})</li>
+            <li class="list-group-item">전공 : {{user.profile.major}}</li>
+            <li class="list-group-item">휴대폰 : {{user.profile.phone_number}}</li>
+            <li class="list-group-item">이메일 : {{user.profile.email}}</li>
+        </ul>
+    </div>
+    <button type="button" class="btn btn-dark">프로필 수정</button>
+
+</div>
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {% for i in form%}
@@ -21,7 +36,7 @@ PNULikeLion-applyform
 
 
 {%endfor%}
-    <input type="submit" value="제출">
+    <button type="button" class="btn btn-dark">제출</button>
 </form>
 
 {% endblock %}
