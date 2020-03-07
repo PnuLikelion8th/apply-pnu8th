@@ -17,14 +17,13 @@ a:hover, a:active { text-decoration: none; }
     color:white !important;
 }
 footer{
-    border : 1px solid red;
     background: black;
     color:white;
     text-align: center;
     line-height: 2;
     font-size:0.75rem;
 }
-nav > img {
+nav img {
     height:50px;
 }
 .bg-dark {
