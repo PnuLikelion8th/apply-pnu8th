@@ -9,14 +9,18 @@
 
   $('.navbar-toggler').on('click', function() {
     if( ! $('#mainNav').hasClass('navbar-reduce')) {
-		// $('#mainNav').addClass('navbar-reduce');
+    //   $('#mainNav').addClass('navbar-reduce');
+    
+	  	// $('#mainNav').addClass('navbar-reduce');
 
-	console.log("토클")
-  }
-	  // $('.navbar-toggler').addClass('collapsed');
-	  // console.log("이거")
-	  // $('.navbar-collapse').removeClass('show');
-	  // console.log("여기")
+	  console.log("토클")
+    }
+		// $('.navbar-toggler').addClass('collapsed');
+		// console.log("이거")
+		// $('.navbar-collapse').removeClass('show');
+		// console.log("여기")
+
+  })
 
 })
   // Preloader
