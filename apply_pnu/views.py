@@ -117,10 +117,7 @@ class ApplyDetail(DetailView):
         else:
             return redirect('index')
 
-class ApplyDetailMaster(DetailView):
-    model = ApplyForm
-    template_name = "apply_detail.html"
-    context_object_name = "apply_one"
+
 
 class ApplyEdit(UpdateView):
     form_class = ApplyFormForm
@@ -128,6 +125,17 @@ class ApplyEdit(UpdateView):
     model = ApplyForm
     success_url = reverse_lazy('index')
 
+    def get(self, request, *args, **kwargs):
+        if kwargs['pk'] == request.user.profile.applyform.id:
+            return super().get(self, request)
+        else:
+            return redirect('index')
+
+    def post(self, request, *args, **kwargs):
+        if kwargs['pk'] == request.user.profile.applyform.id:
+            return super().get(self, request)
+        else:
+            return redirect('index')
 # from django.urls import reverse_lazy
 # class CommunityDelete(DeleteView):
 #     model = CommunityPost
