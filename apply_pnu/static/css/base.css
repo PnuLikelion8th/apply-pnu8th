@@ -55,4 +55,6 @@ html,body{
 
 .kakao_icon{
     width:50px;
+    box-shadow: 0px 0px 8px 2px white;
+    border-radius: 12px;
 }
