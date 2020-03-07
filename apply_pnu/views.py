@@ -48,7 +48,7 @@ class PnuLogin(LoginView):
 
     def get_success_url(self):
         if not self.request.user.profile.name:    
-            url = "/profile_update/"
+            url = "/profile_update"
             return url
         else:
         # 로그인한 현재 페이지로 연결
