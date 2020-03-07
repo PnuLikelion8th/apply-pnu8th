@@ -17,11 +17,13 @@ a:hover, a:active { text-decoration: none; }
     color:white !important;
 }
 footer{
-    background: black;
-    color:white;
-    text-align: center;
+    background: #0078ff;
+    color: white;
+    text-align: left;
     line-height: 2;
-    font-size:0.75rem;
+    font-size:0.8rem;
+    font-weight: bold;
+    padding: 40px 0;
 }
 nav img {
     height:50px;
@@ -37,5 +39,20 @@ nav img {
 
 html,body{
     background-color: black !important;
-    height: 100vh;
+    /* height: 100vh; */
+}
+
+.ft_icon{
+    width: 20px;
+    margin-right: 10px;
+}
+
+.footer_list_cont{
+    width: 320px;
+    /* border: 1px red solid; */
+    margin: 0 auto;
+}
+
+.kakao_icon{
+    width:50px;
 }

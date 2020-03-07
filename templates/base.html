@@ -8,17 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta property="og:title" content="EVERYMAP OF PNU">
+    <meta property="og:title" content="APPLY PNU X LIKELION">
     <meta property="og:description" content="PNU_Likelion_Apply - Likelion8th">
     <meta property="og:image" content="이미지 경로">
 
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
     <title>{% block title %}{% endblock %}</title>
+<<<<<<< HEAD
+=======
     <link rel="Stylesheet" type="text/css" href="{% static 'css/base.css' %}?dt={% now 'U' %}">
     <link rel="Stylesheet" type="text/css" href="{% static 'css/style.css' %}?dt={% now 'U' %}">
 
     <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+>>>>>>> c9ed4c832d0a57f270dbea1dbbd02421d90076e1
 
     <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
     <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
@@ -26,7 +29,11 @@
     <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
     <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
 
-    
+    <link href="pnustatic/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+    <link rel="Stylesheet" type="text/css" href="{% static 'css/base.css' %}?dt={% now 'U' %}">
+    <link rel="Stylesheet" type="text/css" href="{% static 'css/style.css' %}?dt={% now 'U' %}">
+
 
     {% block extra_head %}{% endblock %}
 
@@ -48,13 +55,13 @@
             <ul class="navbar-nav">
               {% if user.is_authenticated %}
               <li class="nav-item">
-                  <a class="nav-link js-scroll active" href="#">
+                  <a class="nav-link js-scroll" href="#">
                       {{user}}
                   </a>
               </li>
               {% if user.is_superuser %}
               <li class="nav-item">
-                  <a class="nav-link js-scroll active" href="{% url 'tjh_show_apply'%}">
+                  <a class="nav-link js-scroll" href="{% url 'tjh_show_apply'%}">
                      전체 지원서
                   </a>
               </li>
@@ -62,26 +69,26 @@
               
               {% if user.profile.applyform %}
               <li class="nav-item">
-                  <a class="nav-link js-scroll active" href="{% url 'apply_detail' user.profile.applyform.id %}">
+                  <a class="nav-link js-scroll" href="{% url 'apply_detail' user.profile.applyform.id %}">
                       내 지원서
                   </a>
               </li>
               {%endif%}
               <li class="nav-item">
                   {%if user.profile.applyform %}
-                  <a class="nav-link js-scroll active" href="{% url 'apply_edit' user.profile.applyform.id %}">수정하기</a>
+                  <a class="nav-link js-scroll" href="{% url 'apply_edit' user.profile.applyform.id %}">수정하기</a>
                   {%else%}
-                  <a class="nav-link js-scroll active" href="{% url 'apply' %}">지원하기</a>
+                  <a class="nav-link js-scroll" href="{% url 'apply' %}">지원하기</a>
                   {%endif%}
               </li>
               <li class="nav-item">
-                  <a class="nav-link js-scroll active" href="{% url 'logout' %}">로그아웃</a>
+                  <a class="nav-link js-scroll" href="{% url 'logout' %}">로그아웃</a>
               </li>
   
               {% else %}
               
               <li class="nav-item">
-                  <a class="nav-link js-scroll active" href="{% url 'login' %}">로그인/회원가입</a>
+                  <a class="nav-link js-scroll" href="{% url 'login' %}">로그인/회원가입</a>
               </li>
                   
               {% endif %}
@@ -98,40 +105,33 @@
         {%block contents%}
 
         {%endblock%}
-    
-        <a href="#" class="back-to-top" style="display: none;"><i class="fa fa-chevron-up"></i></a>
+        <a href="https://open.kakao.com/o/gKPv2K0b/" class="back-to-top" style="display: none;">
+            <img class="kakao_icon" src="{% static 'image/kakao.png'%}">
+        </a>
     </div>
     
     <footer>
-        <div class="footer_list">2020 ⓒ PNU LIKELION 8th, All rights reserved</div>
-        <div class="footer_list">LIKELION 모집기간 : 2020.3.9 ~ 2020.3.22</div>
-        <div class="footer_list">지원 문의 : gt0305@likelion.org </div>
+        <div class="footer_list_cont">
+            <div class="footer_list">2020 ⓒ PNU LIKELION 8th, All rights reserved</div>
+            <div class="footer_list"><img class="ft_icon" src="{% static 'image/mail.png'%}">gt0305@likelion.org</div>
+            <div class="footer_list"><img class="ft_icon" src="{% static 'image/phone.png'%}">010-6684-0078</div>
+        </div>
     </footer>
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script> -->
-        <div id="preloader"></div>
+ 
 
     <!-- JavaScript Libraries -->
-    <script src="{% static 'lib/jquery/jquery.min.js'%}" ></script>
-    <script src="{% static 'lib/jquery/jquery-migrate.min.js'%}" ></script>
-    <script src="{% static 'lib/popper/popper.min.js'%}" ></script>
-    <script src="{% static 'lib/bootstrap/js/bootstrap.min.js'%}" ></script>
-    <script src="{% static 'lib/easing/easing.min.js'%}" ></script>
-    <script src="{% static 'lib/counterup/jquery.waypoints.min.js'%}" ></script>
-    <script src="{% static 'lib/counterup/jquery.counterup.js'%}" ></script>
-    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}" ></script>
-    <script src="{% static 'lib/lightbox/js/lightbox.min.js'%}" ></script>
-    <script src="{% static 'lib/typed/typed.min.js'%}" ></script>
+    <script src="pnustatic/lib/jquery/jquery.min.js"></script>
+    <script src="pnustatic/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="pnustatic/lib/popper/popper.min.js"></script>
+    <script src="pnustatic/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="pnustatic/lib/easing/easing.min.js"></script>
+    <script src="pnustatic/lib/counterup/jquery.waypoints.min.js"></script>
+    <script src="pnustatic/lib/counterup/jquery.counterup.js"></script>
+    <script src="pnustatic/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="pnustatic/lib/lightbox/js/lightbox.min.js"></script>
+    <script src="pnustatic/lib/typed/typed.min.js"></script>
+    <script src="pnustatic/lib/typed/typed.min.js"></script>
+    <script src="pnustatic/js/main.js"></script>
 
-
-    <script src="{% static 'js/main.js'%}"></script>
-    <script src="{% static 'jquery/jquery.min.js'%}"></script>
 </body>
 </html>
