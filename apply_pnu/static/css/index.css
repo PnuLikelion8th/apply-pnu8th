@@ -47,5 +47,9 @@
 }
 .bg_img >img{
     width: 100%;
-
+}
+.table-cell  .btn-primary{
+    background-color:#34558b;
+    border-color:#34558b;
+    color:white;
 }
