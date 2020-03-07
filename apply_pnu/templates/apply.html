@@ -13,7 +13,7 @@ PNULikeLion-applyform
 
 {% block contents %}
 <h1>
-    현재 접속자
+    지원서 작성
 </h1>
 <div>
 
@@ -32,21 +32,22 @@ PNULikeLion-applyform
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{error}}
+    {{message}}
     {% for i in form%}
-    {%if i.label != "Author" %}
-    
-    <div class="apply_label">
-        {{forloop.counter0}} . {{i.label}}
-    </div>
-    {{i}}
-    {%else%}
-        <input type="text" name="author" value={{user.profile.id}}>
+            {%if i.label != "Author" %}
+            
+            <div class="apply_label">
+                {{forloop.counter0}} . {{i.label}}
+            </div>
+            {{i}}
+            {%else%}
+                <input type="hidden" name="author" value={{user.profile.id}}>
 
-    {%endif%}
+            {%endif%}
 
-{%endfor%}
+    {%endfor%}
     
-    <button type="submit" class="btn btn-dark">제출</button>
+    <input type="submit" class="btn btn-dark" value="제출">
 </form>
 
 {% endblock %}

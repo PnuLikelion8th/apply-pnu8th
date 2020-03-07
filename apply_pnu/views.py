@@ -17,10 +17,7 @@ from django.views.generic.edit import UpdateView, DeleteView
 from .forms import ApplyFormForm
 # Create your views here.
 def index(request):
-    all_user = ApplyForm.objects.all()
-
-    for i in all_user:
-        i.delete()
+    
     return render(request, 'index.html')
 
 
@@ -65,34 +62,32 @@ def login(request):
     return render(request, 'login.html')
 
 
-def apply(request):
 
-    if request.method =="POST":
-        temp_form = ApplyFormForm(request.POST)
-        if temp_form.is_valid():
-            print("밸리드")
-            print(request.POST)
-            temp_form.save()
-            print(temp_form)
-            return redirect('index')
-        else:
-            print("낫밸리드")
-            return redirect('apply')
-    else:
+# def apply(request):
+
+#     if request.method =="POST":
+#         temp_form = ApplyFormForm(request.POST)
+#         if temp_form.is_valid():
+#             print("밸리드")
+#             print(request.POST)
+#             temp_form.save()
+#             print(temp_form)
+#             return redirect('index')
+#         else:
+#             print("낫밸리드")
+#             return redirect('apply')
+#     else:
         
-        return render(request, 'apply.html', {'form': ApplyFormForm()})
-# class Apply(CreateView):
-#     form_class = ApplyFormForm
-#     template_name = 'apply.html'
-#     success_url = reverse_lazy('index')
-
-#     def post(self, request, *args, **kwargs):
-        
-#         return super().get(request, *args, **kwargs)
+#         return render(request, 'apply.html', {'form': ApplyFormForm()})
+class Apply(CreateView):
+    form_class = ApplyFormForm
+    template_name = 'apply.html'
+    success_url = reverse_lazy('index')
 
 
+    
 
-# @method_decorator(user_passes_test(lambda u: u.is_superuser), name="get")
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name="get")
 class ApplyList(ListView):
     template_name="apply_list.html"
     context_object_name = "apply_all"
@@ -108,22 +103,39 @@ class ApplyList(ListView):
 #             return redirect('login_main')
 
 
-# from django.urls import reverse
-# class CommunityUpdate(UpdateView):
-#     model = CommunityPost
-#     form_class = CommunityPostForm
-#     template_name = 'community_create.html'
-#     def get(self, request, *args, **kwargs):
-#         self.object = self.get_object()
-#         if self.object.author == self.request.user.profile:
-#             return super().get(request, *args, **kwargs)
-#         else:
-#             raise PermissionDenied
-#     def get_success_url(self):
-#         return reverse('community_detail', kwargs={
-#             'pk': self.object.pk,
-#         })
-    
+class ApplyDetail(DetailView):
+    model = ApplyForm
+    template_name = "apply_detail.html"
+    context_object_name = "apply_one"
+
+    def get(self, request, *args, **kwargs):
+        if request.user.is_superuser:
+            return super().get(self, request)
+        
+        if kwargs['pk'] == request.user.profile.applyform.id:
+            return super().get(self, request)
+        else:
+            return redirect('index')
+
+
+
+class ApplyEdit(UpdateView):
+    form_class = ApplyFormForm
+    template_name = 'apply.html'
+    model = ApplyForm
+    success_url = reverse_lazy('index')
+
+    def get(self, request, *args, **kwargs):
+        if kwargs['pk'] == request.user.profile.applyform.id:
+            return super().get(self, request)
+        else:
+            return redirect('index')
+
+    def post(self, request, *args, **kwargs):
+        if kwargs['pk'] == request.user.profile.applyform.id:
+            return super().get(self, request)
+        else:
+            return redirect('index')
 # from django.urls import reverse_lazy
 # class CommunityDelete(DeleteView):
 #     model = CommunityPost

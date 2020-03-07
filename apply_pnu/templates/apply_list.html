@@ -12,18 +12,16 @@ PNULikeLion-apply_list
 
 
 {% block contents %}
-지원서 목록
 {% for i in apply_all%}
-    
-    <div class="card custom_card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">{{i}}</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+    <a href="{% url 'apply_detail' i.id %}">
+        <div class="card custom_card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{i.author.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{i.author.user}}/{{i.author.major}}</h6>
+                <p class="card-text">{{i}}</p>
+            </div>
         </div>
-    </div>
+    </a>
    
 
 
