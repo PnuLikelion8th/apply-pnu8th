@@ -57,9 +57,9 @@ class ApplyFormForm(forms.ModelForm):
 
 
 class RegisterForm(forms.ModelForm):
-    username = forms.CharField(label='학번')
-    password1 = forms.CharField(label='비밀번호', widget=forms.PasswordInput())
-    password2 = forms.CharField(label='비밀번호 확인', widget=forms.PasswordInput())
+    username = forms.CharField()
+    password1 = forms.CharField(widget=forms.PasswordInput())
+    password2 = forms.CharField(widget=forms.PasswordInput())
 
     class Meta:
         model = User
@@ -68,18 +68,21 @@ class RegisterForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(RegisterForm, self).__init__(*args, **kwargs)
+        self.fields['username'].label = "아이디(학번)"
+        self.fields['password1'].label = "비밀번호"
+        self.fields['password2'].label = "비밀번호 확인"
+        
         self.fields['username'].widget.attrs.update(
             {'placeholder': '학번',
-             'class': "rg_num",
-             'id': "rg_search"})
+             'class': "rg_id"})
         self.fields['password1'].widget.attrs.update(
             {'placeholder': '비밀번호',
-             'class': "rg_password",
-             'id': "rg_pw"})
+             'class': "rg_pw",
+             'id': "password"})
         self.fields['password2'].widget.attrs.update(
-            {'placeholder': '비밀번호확인',
-             'class': "rg_password",
-             'id': "rg_pw_con"})
+            {'placeholder': '비밀번호 확인',
+             'class': "rg_pw2",
+             'id': "password"})
     # def clean_username(self):
     #     username = self.cleaned_data.get('username', '')
     #     if username:
@@ -104,32 +107,36 @@ class ProfileForm(forms.ModelForm):
     
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)
+        
 
         self.fields['name'].widget.attrs.update(
-            {'class': "pf_name",
+            {'class': "pf_name fo-rm",
              'id': "pf_name"})
 
         self.fields['major'].widget.attrs.update(
             {'placeholder': '학과',
+            'class':'fo-rm',
              'id': "pf_major"})
 
         self.fields['phone_number'].widget.attrs.update(
             {'placeholder': '010-0000-0000',
-             'class': "pf_phone_number",
+             'class': "pf_phone_number fo-rm",
              'id': "pf_phone_number"})
 
         self.fields['email'].widget.attrs.update(
             {'placeholder': '이메일',
+            'class':'fo-rm',
              'id': "pf_email"})
 
         self.fields['m_or_f'].widget.attrs.update(
             {'placeholder': '성별',
+            'class':'fo-rm',
              'id': "pf_m_or_f",})
         
         
     class Meta:
         model = Profile
-        fields = ['user','name', 'major', 'phone_number', 'email', 'm_or_f',]
+        fields = ['name', 'major', 'phone_number', 'email', 'm_or_f',]
     
     # def clean_nickname(self):
     #     # print(self)

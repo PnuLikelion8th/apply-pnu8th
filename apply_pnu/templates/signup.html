@@ -1,6 +1,33 @@
-<h1>회원가입 페이지</h1>
-<form method="POST" action="{% url 'signup' %}">
-    {% csrf_token %}
-    {{RegisterForm.as_p}}
-    <input type="submit" value="회원가입">
-</form>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+PNULikeLion-signup
+{% endblock %}
+
+{% block extra_head %}
+
+<link rel="stylesheet" href="{% static 'css/signup.css' %}?dt={% now 'U' %}">
+{% endblock %}
+
+
+{% block contents %}
+
+
+
+    <form method="POST" class="rg_form" action="{% url 'signup' %}">
+        {% csrf_token %}
+        <div class="form_cont">
+            {% for i in RegisterForm %}
+            <div>{{i.label}}</div>
+            {{i}}
+            {{i.errors}}
+            {% endfor %}
+        </div>
+
+        <div class="submit">
+            <input type="submit" class="btn_next" value="다음">    
+        </div>
+    </form>
+
+{% endblock %}
