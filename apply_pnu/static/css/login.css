@@ -38,39 +38,7 @@
     font-size:0.85rem;
 }
 
-.accounts_naver{
-    background-color: #27b13a;
-    padding:20px;
-    border-radius: 15px;
-    width:300px;
-    /* text-align: center; */
-    color:white;
-    margin:20px auto;
-    display: block;
-}
-.accounts_google{
-    cursor: pointer;
-    background-color: #e23434;
-    padding:20px;
-    border-radius: 15px;
-    width:300px;
-    /* text-align: center; */
-    color:white;
-    margin:20px auto;  
-    display: block;
 
-}
-.accounts_email{
-    background-color: #0d0d18;
-    padding:20px;
-    border-radius: 15px;
-    width:300px;
-    /* text-align: center; */
-    color:white;
-    margin:20px auto;  
-    display: block;
-
-}
 
 
 .accounts_login > div{
@@ -150,7 +118,7 @@
 }
 
 .accounts_login{
-    background-color: #0078ff;
+    background-color: #34558b;
     padding:15px;
     border-radius: 15px;
     width:300px;
