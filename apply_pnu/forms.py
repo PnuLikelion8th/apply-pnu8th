@@ -110,7 +110,8 @@ class ProfileForm(forms.ModelForm):
         
 
         self.fields['name'].widget.attrs.update(
-            {'class': "pf_name fo-rm",
+            {'placeholder': '성명',
+            'class': "pf_name fo-rm",
              'id': "pf_name"})
 
         self.fields['major'].widget.attrs.update(

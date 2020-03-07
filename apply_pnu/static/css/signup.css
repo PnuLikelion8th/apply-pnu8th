@@ -10,15 +10,16 @@
     margin-top: 10px;
     margin-bottom: 20px;
     padding-left: 7px;
+    
 }
 
 
 .btn_next {
-    width: 100%; /* 부모 400px 영역 안의 100% 사용 */
+    width: 99%; /* 부모 400px 영역 안의 100% 사용 */
     text-align: center;
     margin-top: 20px;
     border: 4px solid black;
-    background-color: orange;
+    background-color: rgb(252, 177, 38);
     color:black;
     font-size:16px;
     font-weight: bold;
@@ -33,8 +34,9 @@
 .btn_next:hover {
     /* 버튼에 마우스 오버한 경우에 ::after 요소의 컬러를 애니메이션하기 위해 투명도로 변경 */
     background-color: transparent;
-    background-color: black;
-    color: white;
+    background-color: rgba(255, 153, 0, 0.836);
+    
+    color: black;
 }
 .submit::after {
     /*
