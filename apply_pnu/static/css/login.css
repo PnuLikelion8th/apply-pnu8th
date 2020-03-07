@@ -1,23 +1,22 @@
 
 .rg_bg{
-    height:550px;
+    height:430px;
     width:100%;
-    padding : 10% 0;
     display: block;
+    margin: 10% 0;
 
 }
 
 
 .rg_form{
     width:500px;
-    height: 550px;
+    height: 430px;
     position: absolute;
     margin: 0 auto;
     left: 0;
     right: 0;
     background-color: white;
     border-radius: 30px;
-    box-shadow: 0 0px 10px 3px rgba(0,0,0,0.05) ;
 
 }
 
@@ -74,12 +73,10 @@
 }
 
 
-.accounts_naver > div,
-.accounts_google > div,
-.accounts_email > div,
 .accounts_login > div{
     color:white;
     display: inline-block;
+   
 }
 .rg_form >a>img{
     width: 15px;
@@ -126,7 +123,7 @@
     font-size: 1.7rem;
     font-weight: bold;
     text-align: center;
-    margin: 100px 0 60px 0;
+    margin: 0 0 60px 0;
 }
 .username_input{
     display: block;
@@ -160,43 +157,9 @@
     margin:40px auto 50px;  
     display: block;
     font-family: 'nanumsquare_R';
-
 }
 
 .errorlist{
-    display: block;
-    color:red;
-    width: 300px;
-    text-align: center;
-    margin: 0 auto;
-}
-
-
-
-/* 비밀번호 찾기 */
-
-.fp_form{
-    width:500px;
-    height: 350px;
-    position: absolute;
-    margin: 100px auto 0;
-    left: 0;
-    right: 0;
-    background-color: white;
-    border-radius: 30px;
-    box-shadow: 0 0px 10px 3px rgba(0,0,0,0.05) ;
-
-}
-
-
-.fp_title{
-    font-size: 1.7rem;
-    font-weight: bold;
-    text-align: center;
-    margin: 65px 0 60px 0;
-}
-
-.fp_err_msg{
     display: block;
     color:red;
     width: 300px;
@@ -238,4 +201,19 @@
     .rg_form > .accounts_email{
         padding: 20px 0;
     }
+}
+
+
+.container{
+    width: initial;
+}
+input[type="submit"]{
+    border: none;
+    outline: none;
+}
+
+
+
+
+.rg_num{
 }

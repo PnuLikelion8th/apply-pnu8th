@@ -1,6 +1,33 @@
-<h1>회원정보 업데이트 페이지</h1>
-<form method="POST" action="{% url 'profile_update' %}">
-    {% csrf_token %}
-    {{profileform}}
-    <input type="submit" value="확인">
-</form>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+PNULikeLion-profile
+{% endblock %}
+
+{% block extra_head %}
+
+<link rel="stylesheet" href="{% static 'css/signup.css' %}?dt={% now 'U' %}">
+{% endblock %}
+
+
+{% block contents %}
+
+
+
+    <form method="POST" class="rg_form" action="{% url 'profile_update' %}">
+        {% csrf_token %}
+        <div class="form_cont">
+            {% for i in profileform %}
+            <div>{{i.label}}</div>
+            {{i}}
+            {{i.errors}}
+            {% endfor %}
+        </div>
+
+        <div class="submit">
+            <input type="submit" class="btn_next" value="완료">    
+        </div>
+    </form>
+
+{% endblock %}

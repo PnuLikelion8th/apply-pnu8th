@@ -1,0 +1,57 @@
+.rg_form{
+    margin: 5% 0;
+}
+.form_cont{
+    width: 100%;
+}
+.rg_id,.rg_pw,.rg_pw2,.fo-rm{
+    width: 99%;
+    line-height: 2;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 7px;
+    
+}
+
+
+.btn_next {
+    width: 99%; /* 부모 400px 영역 안의 100% 사용 */
+    text-align: center;
+    margin-top: 20px;
+    border: 4px solid black;
+    background-color: rgb(252, 177, 38);
+    color:black;
+    font-size:16px;
+    font-weight: bold;
+    padding-top:12px;
+    padding-bottom:12px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.btn_next:hover {
+    /* 버튼에 마우스 오버한 경우에 ::after 요소의 컬러를 애니메이션하기 위해 투명도로 변경 */
+    background-color: transparent;
+    background-color: rgba(255, 153, 0, 0.836);
+    
+    color: black;
+}
+.submit::after {
+    /*
+        * 요소에 텍스트도 없는 빈 요소이기 때문에 플롯된 요소 영역에 자리잡게 된다.
+        * 만약 텍스트가 있다면 텍스트 노드는 떨어지겠지만 해당 영역은 플롯 요소가 100%를 사용하고 있기 때문에 플롯 요소 영역과 겹친다.
+        */
+    display: block;
+    width: 0;
+    height: 30px;
+    background-color: #d36a14;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -o-transition: .3s ease;
+    -ms-transition: .3s ease;
+    transition: .3s ease;
+    content: "";
+}
+
