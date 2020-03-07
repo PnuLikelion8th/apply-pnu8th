@@ -79,10 +79,22 @@ def login(request):
 #     else:
         
 #         return render(request, 'apply.html', {'form': ApplyFormForm()})
+
 class Apply(CreateView):
     form_class = ApplyFormForm
     template_name = 'apply.html'
     success_url = reverse_lazy('index')
+
+    def get(self, request, *args, **kwargs):
+        
+        if self.request.user.is_authenticated:
+            if self.request.user.profile.name == "":
+                return redirect('profile_update')
+            else:
+                self.object = None        
+                return super().get(request, *args, **kwargs)
+        else:
+            return redirect('login')
 
 
     
@@ -92,15 +104,8 @@ class ApplyList(ListView):
     template_name="apply_list.html"
     context_object_name = "apply_all"
     model = ApplyForm
-# def get(self, request, *args, **kwargs):
-#         if self.request.user.is_authenticated:
-#             if self.request.user.profile.nickname == "":
-#                 return redirect('profile_update')
-#             else:
-#                 self.object = None        
-#                 return super().get(request, *args, **kwargs)
-#         else:
-#             return redirect('login_main')
+
+
 
 
 class ApplyDetail(DetailView):
@@ -167,7 +172,6 @@ def profile_update(request):
     if request.method == 'POST':
         if profileform.is_valid():
             profile.save()  
-            print("세이브야!")
             return redirect('index')
         
         else:

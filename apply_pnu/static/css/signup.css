@@ -19,7 +19,7 @@
     text-align: center;
     margin-top: 20px;
     border: none;
-    background-color: #ff9e1b;
+    background-color: #34558b;
     color:black;
     font-size:16px;
     font-weight: bold;
@@ -34,8 +34,7 @@
 .btn_next:hover {
     /* 버튼에 마우스 오버한 경우에 ::after 요소의 컬러를 애니메이션하기 위해 투명도로 변경 */
     background-color: transparent;
-    background-color: rgb(255, 192, 56);
-    
+    background-color: #91ADD9;
     color: black;
 }
 .submit::after {
