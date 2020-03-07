@@ -7,6 +7,7 @@
 .custom_card .list-group-item{
     background-color: black;
     border-color: white;
+    margin:1px 0;
 }
 .custom_card button{
     width:50%;
@@ -27,4 +28,16 @@
 }
 .form-control{
     background-color: #ccc;
+}
+.custom_card button{
+    background-color: #34558b;
+}
+.apply_label{
+    font-size:0.85rem;
+}
+
+.custom_submit{
+    
+    float: right;
+
 }

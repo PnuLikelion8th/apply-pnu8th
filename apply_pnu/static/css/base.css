@@ -17,7 +17,7 @@ a:hover, a:active { text-decoration: none; }
     color:white !important;
 }
 footer{
-    background: #0078ff;
+    background: #34558b;
     color: white;
     text-align: left;
     line-height: 2;
@@ -33,7 +33,7 @@ nav img {
 }
 
 .custom_container{
-    margin-top:150px;
+    margin:150px 0;
     color:white;
 }
 
@@ -55,4 +55,16 @@ html,body{
 
 .kakao_icon{
     width:50px;
+}
+
+@media(max-width:768px){
+ .footer_list_cont{
+     text-align: center;
+ }   
+}
+
+/* 파란색깔 바꿀꺼임 */
+.navbar-b.navbar-reduce .navbar-brand,
+.navbar-b.navbar-reduce .nav-link{
+    color:#34558b !important;
 }

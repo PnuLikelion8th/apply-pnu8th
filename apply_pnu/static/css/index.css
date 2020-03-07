@@ -35,3 +35,9 @@
     background: black;
     height: 500px;
 }
+
+.table-cell  .btn-primary{
+    background-color:#34558b;
+    border-color:#34558b;
+    color:white;
+}

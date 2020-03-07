@@ -6,7 +6,7 @@ PNULikeLion-applyform
 {% endblock %}
 
 {% block extra_head %}
-<link rel="Stylesheet" type="text/css" href="{% static 'css/apply.css' %}?dt={% now 'U' %}">
+<link rel="Stylesheet" type="text/css" href="{% static 'css/apply_detail.css' %}?dt={% now 'U' %}">
 
 {% endblock %}
 
@@ -17,17 +17,18 @@ PNULikeLion-applyform
 </h1>
 <div>
 
-    <div class="card" style="width: 18rem;">
+    <div class="card custom_card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">{{user.profile.name}}({{user}}/{{user.profile.m_or_f}})</li>
             <li class="list-group-item">전공 : {{user.profile.major}}</li>
             <li class="list-group-item">휴대폰 : {{user.profile.phone_number}}</li>
             <li class="list-group-item">이메일 : {{user.profile.email}}</li>
         </ul>
+            <a href="{% url 'profile_update' %}">
+                <button type="button" class="btn btn-dark">프로필 수정</button>
+            </a>
     </div>
-    <a href="{% url 'profile_update' %}">
-    <button type="button" class="btn btn-dark">프로필 수정</button>
-    </a>
+
 </div>
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
@@ -35,11 +36,13 @@ PNULikeLion-applyform
     {{message}}
     {% for i in form%}
             {%if i.label != "Author" %}
-            
+                <div class="apply_detail_compo">
+
             <div class="apply_label">
                 {{forloop.counter0}} . {{i.label}}
             </div>
             {{i}}
+            </div>
             {%else%}
                 <input type="hidden" name="author" value={{user.profile.id}}>
 
@@ -47,7 +50,7 @@ PNULikeLion-applyform
 
     {%endfor%}
     
-    <input type="submit" class="btn btn-dark" value="제출">
+    <input type="submit" class="btn btn-dark custom_submit" value="제출">
 </form>
 
 {% endblock %}
