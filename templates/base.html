@@ -16,54 +16,81 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>{% block title %}{% endblock %}</title>
     <link rel="Stylesheet" type="text/css" href="{% static 'css/base.css' %}?dt={% now 'U' %}">
+    <link rel="Stylesheet" type="text/css" href="{% static 'css/style.css' %}?dt={% now 'U' %}">
+
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+
+    
 
     {% block extra_head %}{% endblock %}
 
-
+    
 </head>
-<body>
-    <nav class="navbar sticky-top navbar-dark bg-dark ">
-        <a href="{% url 'index'%}">
-            <img src="{% static 'image/likelion.png' %}">
+<body id="page-top">
 
-        </a>
 
-        <ul class="nav">
-            
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link active white_text" href="#">
-                    {{user}}
-                </a>
-            </li>
-            {% if user %}<!--is_superuser-->
-            <li class="nav-item">
-                <a class="nav-link active white_text" href="{% url 'tjh_show_apply'%}">
-                   지원서보기
-                </a>
-            </li>
-            {%endif%}
-            <li class="nav-item">
-                {%if user.profile.applyform_set.all %}
-                <a class="nav-link white_text" href="#">수정하기</a>
-                {%else%}
-                <a class="nav-link white_text" href="{% url 'apply' %}">지원하기</a>
-                {%endif%}
-            </li>
-            <li class="nav-item">
-                <a class="nav-link white_text" href="{% url 'logout' %}">로그아웃</a>
-            </li>
+    <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+        <!-- <div class="container"> -->
+          <a class="navbar-brand js-scroll" href="{% url 'index' %}">PNU X Likelion</a>
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+            aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+            <ul class="navbar-nav">
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                  <a class="nav-link js-scroll active" href="#">
+                      {{user}}
+                  </a>
+              </li>
+              {% if user.is_superuser %}
+              <li class="nav-item">
+                  <a class="nav-link js-scroll active" href="{% url 'tjh_show_apply'%}">
+                     전체 지원서
+                  </a>
+              </li>
+              {%endif%}
+              
+              {% if user.profile.applyform %}
+              <li class="nav-item">
+                  <a class="nav-link js-scroll active" href="{% url 'apply_detail' user.profile.applyform.id %}">
+                      내 지원서
+                  </a>
+              </li>
+              {%endif%}
+              <li class="nav-item">
+                  {%if user.profile.applyform %}
+                  <a class="nav-link js-scroll active" href="{% url 'apply_edit' user.profile.applyform.id %}">수정하기</a>
+                  {%else%}
+                  <a class="nav-link js-scroll active" href="{% url 'apply' %}">지원하기</a>
+                  {%endif%}
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link js-scroll active" href="{% url 'logout' %}">로그아웃</a>
+              </li>
+  
+              {% else %}
+              
+              <li class="nav-item">
+                  <a class="nav-link js-scroll active" href="{% url 'login' %}">로그인/회원가입</a>
+              </li>
+                  
+              {% endif %}
 
-            {% else %}
-            
-            <li class="nav-item">
-                <a class="nav-link white_text" href="{% url 'login' %}">로그인/회원가입</a>
-            </li>
-                
-            {% endif %}
-            
-        </ul>
-    </nav>
+            </ul>
+          </div>
+        <!-- </div> -->
+      </nav>
+    
 
     <div class="container">
        
@@ -88,5 +115,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
+
+
+    <script src="{% static 'js/main.js'%}"></script>
+    <script src="{% static 'jquery/jquery.min.js'%}"></script>
 </body>
 </html>

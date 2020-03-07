@@ -1,15 +1,23 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block title %}
 PNULikeLion-apply
 {% endblock %}
 
 {% block extra_head %}
+<link rel="Stylesheet" type="text/css" href="{% static 'css/index.css' %}?dt={% now 'U' %}">
 {% endblock %}
 
-
 {% block contents %}
+<!-- <div class="black_sec"></div> -->
+<!-- <div class="main_list"> -->
+    <!-- 홍보영상 -->
+<!-- </div>
+<div class="main_list_line"></div>
+<div class="main_list_subline"></div> -->
 
-안녕하세요 메인페이지
+<div class="video_cont">
+    <video src="{% static 'video/likelion_promt.mp4' %}" width="100%" controls autoplay></video>
+</div>
 {% endblock %}
