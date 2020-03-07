@@ -127,14 +127,18 @@ class ApplyEdit(UpdateView):
 
     def get(self, request, *args, **kwargs):
         if kwargs['pk'] == request.user.profile.applyform.id:
-            return super().get(self, request)
+            print("1*********************************8")
+            return super().get(request, *args, **kwargs)
         else:
+            print("2******************************")
             return redirect('index')
 
     def post(self, request, *args, **kwargs):
         if kwargs['pk'] == request.user.profile.applyform.id:
-            return super().get(self, request)
+            print("3*****************************")
+            return super().post(request, *args, **kwargs)
         else:
+            print("4******************************")
             return redirect('index')
 # from django.urls import reverse_lazy
 # class CommunityDelete(DeleteView):

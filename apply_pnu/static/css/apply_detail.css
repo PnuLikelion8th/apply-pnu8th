@@ -35,6 +35,9 @@
 .apply_label{
     font-size:0.85rem;
 }
+.readonly_form{
+    height:auto;
+}
 
 .custom_submit{
     

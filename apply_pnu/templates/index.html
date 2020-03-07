@@ -9,15 +9,25 @@ PNULikeLion-apply
 <link rel="Stylesheet" type="text/css" href="{% static 'css/index.css' %}?dt={% now 'U' %}">
 {% endblock %}
 
+    {%block background%}
+    <div class="bg_img"><img src="{% static 'image/main_img.png' %}"></div>
+
+    {%endblock%}
 {% block contents %}
-  <div class="bg_img"><img src="{% static 'image/main_img.png' %}"></div>
   <div id="home" class="intro route bg-image">
     <div class="intro-content display-table">
       <div class="table-cell">
         <div class="container">
           <h1 class="intro-title mb-4">PNU X LIKELION</h1>
           <p class="intro-subtitle"><span class="text-slider-items">LikeLion, Pusan University, Web DevOps, Fullstack Developer, Graphic Designer</span><strong class="text-slider"></strong></p>
-          <p class="pt-3"><a class="btn btn-primary btn-lg js-scroll px-4" href="{% url 'apply' %}" role="button">APPLY!</a></p>
+          <p class="pt-3">
+            {%if user.profile.applyform %}
+            <a class="btn btn-primary btn-lg js-scroll px-4" href="{% url 'apply_edit' user.profile.applyform.id  %}" role="button">Edit!</a>
+
+                {%else%}
+                <a class="btn btn-primary btn-lg js-scroll px-4" href="{% url 'apply' %}" role="button">APPLY!</a>
+                {%endif%}
+            </p>
         </div>
       </div>
     </div>
@@ -57,5 +67,6 @@ PNULikeLion-apply
     <video src="{% static 'video/likelion_promt.mp4' %}" width="100%" loop="loop" muted controls autoplay></video>
 </div>
 
+    <script src="{% static 'js/countdown.js'%}"></script>
 
 {% endblock %}
