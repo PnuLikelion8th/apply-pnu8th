@@ -18,7 +18,7 @@
     width: 99%; /* 부모 400px 영역 안의 100% 사용 */
     text-align: center;
     margin-top: 20px;
-    border: 4px solid black;
+    border: none;
     background-color: #ff9e1b;
     color:black;
     font-size:16px;
@@ -58,4 +58,11 @@
 
 .form_cont>div{
     font-weight: bold;
+    color: #dddddd;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.errorlist{
+    color: orange;
 }
