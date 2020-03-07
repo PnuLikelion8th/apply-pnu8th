@@ -3,10 +3,26 @@
 	var nav = $('nav');
   var navHeight = nav.outerHeight();
   
+
+
+
+
   $('.navbar-toggler').on('click', function() {
     if( ! $('#mainNav').hasClass('navbar-reduce')) {
+<<<<<<< HEAD
       $('#mainNav').addClass('navbar-reduce');
     }
+=======
+	  	// $('#mainNav').addClass('navbar-reduce');
+
+	  console.log("토클")
+    }
+		// $('.navbar-toggler').addClass('collapsed');
+		// console.log("이거")
+		// $('.navbar-collapse').removeClass('show');
+		// console.log("여기")
+
+>>>>>>> c9ed4c832d0a57f270dbea1dbbd02421d90076e1
   })
 
   // Preloader
@@ -18,6 +34,7 @@
     }
   });
 
+<<<<<<< HEAD
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
@@ -30,6 +47,41 @@
     $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
     return false;
   });
+=======
+	/*--/ Navbar Menu Reduce /--*/
+	$(window).trigger('scroll');
+	$(window).on('scroll', function () {
+		var pixels = 50;
+		var top = 1200;
+		if ($(window).scrollTop() > pixels) {
+			$('.navbar-expand-md').addClass('navbar-reduce');
+			$('.navbar-expand-md').removeClass('navbar-trans');
+		} else {
+			$('.navbar-expand-md').addClass('navbar-trans');
+			$('.navbar-expand-md').removeClass('navbar-reduce');
+		}
+		if ($(window).scrollTop() > top) {
+			$('.scrolltop-mf').fadeIn(1000, "easeInOutExpo");
+		} else {
+			$('.scrolltop-mf').fadeOut(1000, "easeInOutExpo");
+		}
+	});
+
+
+//   Back to top button	
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {
+			$('.back-to-top').fadeIn('slow');
+		} else {
+			$('.back-to-top').fadeOut('slow');
+		}
+	});
+	$('.back-to-top').click(function () {
+		$('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+		return false;
+	});
+
+>>>>>>> c9ed4c832d0a57f270dbea1dbbd02421d90076e1
 
 	/*--/ Star ScrollTop /--*/
 	$('.scrolltop-mf').on("click", function () {

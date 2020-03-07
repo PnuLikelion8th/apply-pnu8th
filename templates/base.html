@@ -15,12 +15,19 @@
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
     <title>{% block title %}{% endblock %}</title>
+<<<<<<< HEAD
+=======
+    <link rel="Stylesheet" type="text/css" href="{% static 'css/base.css' %}?dt={% now 'U' %}">
+    <link rel="Stylesheet" type="text/css" href="{% static 'css/style.css' %}?dt={% now 'U' %}">
 
-    <link href="pnustatic/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="pnustatic/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="pnustatic/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="pnustatic/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="pnustatic/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+>>>>>>> c9ed4c832d0a57f270dbea1dbbd02421d90076e1
+
+    <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
 
     <link href="pnustatic/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   
@@ -39,7 +46,7 @@
         <!-- <div class="container"> -->
           <a class="navbar-brand js-scroll" href="{% url 'index' %}">PNU X LIKELION</a>
           <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
-            aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation" >
             <span></span>
             <span></span>
             <span></span>
