@@ -3,13 +3,21 @@
 	var nav = $('nav');
   var navHeight = nav.outerHeight();
   
+
+
+
+
   $('.navbar-toggler').on('click', function() {
     if( ! $('#mainNav').hasClass('navbar-reduce')) {
-      $('#mainNav').addClass('navbar-reduce');
-    }else{
-		$('#mainNav').removeClass('navbar-reduce');
+	  	// $('#mainNav').addClass('navbar-reduce');
 
-	}
+	  console.log("토클")
+    }
+		// $('.navbar-toggler').addClass('collapsed');
+		// console.log("이거")
+		// $('.navbar-collapse').removeClass('show');
+		// console.log("여기")
+
   })
 
   // Preloader
@@ -24,7 +32,6 @@
 	/*--/ Navbar Menu Reduce /--*/
 	$(window).trigger('scroll');
 	$(window).on('scroll', function () {
-		console.log("야야야야")
 		var pixels = 50;
 		var top = 1200;
 		if ($(window).scrollTop() > pixels) {
@@ -57,17 +64,17 @@
 
 
 	/*--/ Star ScrollTop /--*/
-	// $('.scrolltop-mf').on("click", function () {
-	// 	$('html, body').animate({
-	// 		scrollTop: 0
-	// 	}, 1000);
-	// });
+	$('.scrolltop-mf').on("click", function () {
+		$('html, body').animate({
+			scrollTop: 0
+		}, 1000);
+	});
 
 	/*--/ Star Counter /--*/
-	// $('.counter').counterUp({
-	// 	delay: 15,
-	// 	time: 2000
-	// });
+	$('.counter').counterUp({
+		delay: 15,
+		time: 2000
+	});
 
 	/*--/ Star Scrolling nav /--*/
 	$('a.js-scroll[href*="#"]:not([href="#"])').on("click", function () {
