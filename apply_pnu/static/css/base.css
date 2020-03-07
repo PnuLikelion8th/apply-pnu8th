@@ -32,4 +32,9 @@ nav img {
 
 .custom_container{
     margin-top:70px;
+    
+}
+
+html,body{
+    /* background-color: black !important; */
 }
