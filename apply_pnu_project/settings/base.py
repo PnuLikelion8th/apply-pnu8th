@@ -113,7 +113,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'pnustatic')
 STATIC_URL = '/pnustatic/'
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'pnumedia')
 MEDIA_URL = '/pnumedia/'
 
 LOGIN_REDIRECT_URL = "/"
