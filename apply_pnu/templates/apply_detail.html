@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load myfilters %}
+
 {% load static %}
 
 {% block title %}
@@ -63,7 +65,10 @@ PNULikeLion-apply_detail
     <div class="apply_detail_compo">
         <div class="apply_label">• 본인을 나타낼 수 있는 포트폴리오를 첨부해주세요(URL의 경우 캡쳐후 첨부)(선택)</div>
         <div class="form-control readonly_form">
-{{apply_one.portfolio}}
+        <a href={{apply_one.portfolio.url}}>
+            파일 : {{apply_one.portfolio|delete_portfolio}}
+
+        </a>
         </div>
     </div>
     <div class="apply_detail_compo">
