@@ -42,10 +42,7 @@
     color:#ccc;
     line-height: 1.5;
 }
-.readonly_form > a {
-    color:#34558b;
-    font-weight: 800;
-}
+
 .custom_submit{
     
     float: right;
@@ -78,6 +75,7 @@
 #fake-file-route{
         padding:5px 15px;
     box-sizing: border-box;
+    width:100%;
 }
 .cus-file-label{
     position: absolute;
@@ -86,11 +84,50 @@
     width: 100%;
     text-align: right;
     box-sizing: border-box;
+    cursor: pointer;
 }
 .fake-file-btn{
     display: inline-block;
-    /* border:2px solid #34558b; */
-    /* border-radius: 10px; */
+    border-left:1.5px solid #777;
         padding:5px 15px;
     box-sizing: border-box;
+
+}
+
+.apply_detail_compo > a {
+    display: inline-block;
+    margin-left:10px;
+    
+}
+.apply_detail_compo > label[for="portfolio-clear_id"] {
+    /* color:whilste; */
+    /* background-color: black; */
+    /* border:1px solid white; */
+    /* width:20px; */
+    /* height:20px; */
+    /* overflow:hidden; */
+    display: none;
+    /* font-size: 0.9rem; */
+}
+
+/* #portfolio-clear_id::after{
+     content: '';
+     display: inline-block;
+    border:1px solid white;
+    width:20px;
+    height:20px;
+}
+input[id="portfolio-clear_id"]:checked + #portfolio-clear_id::after{
+    border-color: black !important;
+     background-color: white;
+  
+} */
+#portfolio-clear_id{
+    margin-left:20px !important;
+    margin-right:10px;
+    display: none;
+}
+.cus-file-upload-box{
+    margin-top:10px;
+
 }
