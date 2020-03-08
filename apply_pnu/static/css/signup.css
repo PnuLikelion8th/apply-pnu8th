@@ -75,3 +75,9 @@
 .privacy_check{
     font-size:0.8rem;
 }
+
+@media(max-width:768px){
+    .rg_form{
+        width:unset;
+    }
+}
