@@ -43,7 +43,7 @@ class ApplyForm(models.Model):
     team = models.TextField('참여했던 팀 활동 중 가장 기억에 남는 경험과 느낌점을 서술하시오(최대500자)', max_length=500)
     concept = models.TextField('본인은 멋쟁이사자처럼 동아리내 어떤 캐릭터일지 서술하시오(최대 500자)', max_length=500)
 
-    portfolio = models.FileField('본인을 나타낼 수 있는 포트폴리오를 첨부해주세요(URL의 경우 캡쳐후 첨부)', blank= True, upload_to='portfolio/')
+    portfolio = models.FileField('본인을 나타낼 수 있는 포트폴리오를 첨부해주세요(URL의 경우 캡쳐후 첨부)(선택사항)', blank= True, upload_to='portfolio/')
     interview = models.TextField('면접가능시간( 3월 28일(토), 3월 29일(일) )을 작성해주세요', max_length=255)
     experience = models.TextField('프로그래밍 경험이 있다면 기술스택과 수준을, 프로그래밍 경험이 없다면 기대감과 각오를 적어주세요', max_length=1000)
     schedule = models.TextField('1학기 고정스케줄(요일&시간)', max_length=1000)
