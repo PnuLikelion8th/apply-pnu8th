@@ -12,9 +12,15 @@ PNULikeLion-applyform
 
 
 {% block contents %}
+{% if user.profile.applyform %}
+<h1>
+    지원서 수정
+</h1>
+{%else%}
 <h1>
     지원서 작성
 </h1>
+{%endif%}
 <div>
 
     <div class="card custom_card" style="width: 18rem;">

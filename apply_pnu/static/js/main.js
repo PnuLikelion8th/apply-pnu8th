@@ -13,7 +13,7 @@
     
 	  	// $('#mainNav').addClass('navbar-reduce');
 
-	  console.log("토클")
+	//   console.log("토클")
     }
 		// $('.navbar-toggler').addClass('collapsed');
 		// console.log("이거")

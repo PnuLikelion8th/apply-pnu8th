@@ -54,7 +54,12 @@ PNULikeLion-profile
         </details>
            
         <div class="submit">
-            <input type="submit" class="btn_next" value="개인정보 활용 동의 후 가입완료">    
+            {% if user.profile.name %}
+            <input type="submit" class="btn_next" value="수정완료">    
+            {%else%}
+            <input type="submit" class="btn_next" value="개인정보 활용 동의 후 가입완료">
+
+            {%endif%}
         </div>
     </form>
 

@@ -22,7 +22,10 @@ PNULikeLion-apply_detail
             <li class="list-group-item">휴대폰 : {{apply_one.author.phone_number}}</li>
             <li class="list-group-item">이메일 : {{apply_one.author.email}}</li>
         </ul>
+        <a href="{% url 'profile_update' %}">
+
         <button type="button" class="btn btn-dark">프로필 수정</button>
+        </a>
     </div>
    
 
