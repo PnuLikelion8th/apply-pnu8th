@@ -52,11 +52,13 @@ PNULikeLion-applyform
                         </div>
                     </label>
                 </div>
-
                 {%else%}
                     {{i}}
                 {%endif%}
-            
+                {%if i.label != "본인을 나타낼 수 있는 포트폴리오를 첨부해주세요(URL의 경우 캡쳐후 첨부)(선택사항)" %}
+
+                <div class="text-counting">글자수 세기 : 0</div>
+                {%endif%}
             </div>
             {%else%}
                 <input type="hidden" name="author" value={{user.profile.id}}>

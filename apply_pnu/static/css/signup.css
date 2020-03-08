@@ -1,16 +1,22 @@
 .rg_form{
-    margin: 5% 0;
+    width:500px;
+    margin: 0 auto;
+   
+    background-color: none;
 }
 .form_cont{
     width: 100%;
 }
 .rg_id,.rg_pw,.rg_pw2,.fo-rm{
+    box-sizing: border-box;
+    padding:5px 15px;
+    border:none;
     width: 99%;
     line-height: 2;
     margin-top: 10px;
     margin-bottom: 20px;
-    padding-left: 7px;
-    
+    border-radius: 20px;
+    outline: none;
 }
 
 
@@ -64,4 +70,8 @@
 
 .errorlist{
     color: orange;
+}
+
+.privacy_check{
+    font-size:0.8rem;
 }
