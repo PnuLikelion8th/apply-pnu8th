@@ -139,4 +139,5 @@ input[id="portfolio-clear_id"]:checked + #portfolio-clear_id::after{
     bottom:5px;
     color:black;
     font-size:0.75rem;
+    font-weight: 800;
 }
