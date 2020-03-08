@@ -32,16 +32,31 @@ PNULikeLion-applyform
 </div>
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {{error}}
-    {{message}}
+
     {% for i in form%}
             {%if i.label != "Author" %}
-                <div class="apply_detail_compo">
+            <div class="apply_detail_compo">
+                <div class="apply_label">
+                    {{forloop.counter0}} . {{i.label}}
+                </div>
+                {%if i.label == "본인을 나타낼 수 있는 포트폴리오를 첨부해주세요(URL의 경우 캡쳐후 첨부)" %}
 
-            <div class="apply_label">
-                {{forloop.counter0}} . {{i.label}}
-            </div>
-            {{i}}
+                {{i}}
+                <div class="cus-file-upload-box">
+                    <label id="fake-file-route-box" for="customFile">
+                        <input type="text"  readonly="readonly" id="fake-file-route">
+                    </label>
+                    <label class="cus-file-label" for="customFile" id="fake">
+                        <div class="fake-file-btn">
+                            파일첨부
+                        </div>
+                    </label>
+                </div>
+
+                {%else%}
+                    {{i}}
+                {%endif%}
+            
             </div>
             {%else%}
                 <input type="hidden" name="author" value={{user.profile.id}}>
@@ -52,5 +67,6 @@ PNULikeLion-applyform
     
     <input type="submit" class="btn btn-dark custom_submit" value="제출">
 </form>
+    <script src="{% static 'js/fileupload.js'%}"></script>
 
 {% endblock %}

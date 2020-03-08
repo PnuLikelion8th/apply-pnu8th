@@ -24,7 +24,7 @@
     padding:15px 0;
 }
 .apply_detail_compo{
-    margin:20px 0;
+    margin:30px 0;
 }
 .form-control{
     background-color: #ccc;
@@ -37,10 +37,97 @@
 }
 .readonly_form{
     height:auto;
+    background: none;
+    border:none;
+    color:#ccc;
+    line-height: 1.5;
 }
 
 .custom_submit{
     
     float: right;
+
+}
+
+#customFile{
+    border: 1px solid white !important;
+    background-color: wheat !important;
+}
+.cus-file-input{
+    display: none;
+}
+
+.cus-file-upload-box{
+    position: relative;
+    height: 50px;
+}
+#fake-file-route-box,#fake-file-route{
+    width:100%;
+    display: block;
+    border:none;
+    background: none;
+    background: #ccc;
+    border-radius: 10px;
+    position: absolute;
+
+}
+
+#fake-file-route{
+        padding:5px 15px;
+    box-sizing: border-box;
+    width:100%;
+}
+.cus-file-label{
+    position: absolute;
+    color:black;
+    font-weight: 800;
+    width: 100%;
+    text-align: right;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.fake-file-btn{
+    display: inline-block;
+    border-left:1.5px solid #777;
+        padding:5px 15px;
+    box-sizing: border-box;
+
+}
+
+.apply_detail_compo > a {
+    display: inline-block;
+    margin-left:10px;
+    
+}
+.apply_detail_compo > label[for="portfolio-clear_id"] {
+    /* color:whilste; */
+    /* background-color: black; */
+    /* border:1px solid white; */
+    /* width:20px; */
+    /* height:20px; */
+    /* overflow:hidden; */
+    display: none;
+    /* font-size: 0.9rem; */
+}
+
+/* #portfolio-clear_id::after{
+     content: '';
+     display: inline-block;
+    border:1px solid white;
+    width:20px;
+    height:20px;
+}
+input[id="portfolio-clear_id"]:checked + #portfolio-clear_id::after{
+    border-color: black !important;
+     background-color: white;
+  
+} */
+#portfolio-clear_id{
+    margin-left:20px !important;
+    margin-right:10px;
+    display: none;
+}
+.cus-file-upload-box{
+    margin-top:10px;
 
 }

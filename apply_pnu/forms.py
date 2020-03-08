@@ -34,7 +34,9 @@ class ApplyFormForm(forms.ModelForm):
 
         self.fields['portfolio'].widget.attrs.update(
             {'placeholder': "",
-             'class': 'form-control custom_textarea',})
+             'class': 'cus-file-input',
+             'onchange': 'display_file_route(value)',
+             'id':'customFile' })
 
         self.fields['interview'].widget.attrs.update(
             {'placeholder': "",
