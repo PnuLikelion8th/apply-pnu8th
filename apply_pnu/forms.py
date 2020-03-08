@@ -20,17 +20,11 @@ class ApplyFormForm(forms.ModelForm):
             {'placeholder': "",
              'class': 'form-control custom_textarea', })
 
-        self.fields['plan'].widget.attrs.update(
-            {'placeholder': "",
-             'class': 'form-control custom_textarea', })
 
         self.fields['team'].widget.attrs.update(
             {'placeholder': "",
              'class': 'form-control custom_textarea',})
 
-        self.fields['concept'].widget.attrs.update(
-            {'placeholder': "",
-             'class': 'form-control custom_textarea',})
 
         self.fields['portfolio'].widget.attrs.update(
             {'placeholder': "",
@@ -53,7 +47,7 @@ class ApplyFormForm(forms.ModelForm):
     
     class Meta:
         model = ApplyForm
-        fields = ('author','introduce', 'position', 'goal', 'plan','team','concept','portfolio','interview','experience','schedule',)
+        fields = ('author','introduce', 'position', 'goal','team','portfolio','interview','experience','schedule',)
         
 
 
