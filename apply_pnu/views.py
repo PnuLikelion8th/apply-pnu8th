@@ -86,15 +86,18 @@ class Apply(CreateView):
     success_url = reverse_lazy('index')
 
     def get(self, request, *args, **kwargs):
-        
-        if self.request.user.is_authenticated:
-            if self.request.user.profile.name == "":
-                return redirect('profile_update')
+        try:
+            if request.user.profile.applyform:
+                return redirect('apply_edit' ,pk=request.user.profile.applyform.id)
+        except:
+            if self.request.user.is_authenticated:
+                if self.request.user.profile.name == "":
+                    return redirect('profile_update')
+                else:
+                    self.object = None        
+                    return super().get(request, *args, **kwargs)
             else:
-                self.object = None        
-                return super().get(request, *args, **kwargs)
-        else:
-            return redirect('login')
+                return redirect('login')
 
 
     
