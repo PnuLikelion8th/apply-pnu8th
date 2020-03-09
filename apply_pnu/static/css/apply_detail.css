@@ -142,3 +142,8 @@ input[id="portfolio-clear_id"]:checked + #portfolio-clear_id::after{
     font-size:0.75rem;
     font-weight: 800;
 }
+
+
+  textarea::-webkit-scrollbar-track-piece {
+    background-color: #dddddd;
+  }

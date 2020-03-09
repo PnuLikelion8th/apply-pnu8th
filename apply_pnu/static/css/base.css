@@ -76,7 +76,7 @@ html,body{
     height: 20px;  /* 가로축 스크롤바 길이 */
   }
   ::-webkit-scrollbar-track-piece {
-    background-color: #dddddd;
+    background-color: black;
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 8px;
