@@ -7,7 +7,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['pnu.likelion.org','.amazonaws.com','localhost','127.0.0.1']
 
+import requests
+EC2_PRIVATE_IP=None
+try:
+    EC2_PRIVATE_IP=requests.get('http://169.254.169.254/latest/meta-data/local-ipv4', timeout = 0.01).text
+except requests.exceptions.RequestException:    
+    pass
 
+if EC2_PRIVATE_IP:    
+    ALLOWED_HOSTS.append(EC2_PRIVATE_IP)
 
 config_secret_deploy = json.loads(open(CONFIG_SECRET_DEPLOY_FILE).read())
 
