@@ -5,7 +5,7 @@ import json
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['pnu.likelion.org','.amazonaws.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['.pnulikelion.net','.amazonaws.com','localhost','127.0.0.1']
 
 import requests
 EC2_PRIVATE_IP=None
