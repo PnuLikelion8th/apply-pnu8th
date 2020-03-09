@@ -22,9 +22,11 @@
 }
 .apply_label{
     padding:15px 0;
+    line-height: 1.8;
 }
 .apply_detail_compo{
     margin:30px 0;
+    position: relative;
 }
 .form-control{
     background-color: #ccc;
@@ -130,4 +132,13 @@ input[id="portfolio-clear_id"]:checked + #portfolio-clear_id::after{
 .cus-file-upload-box{
     margin-top:10px;
 
+}
+
+.text-counting{
+    position: absolute;
+    right:10px;
+    bottom:5px;
+    color:black;
+    font-size:0.75rem;
+    font-weight: 800;
 }

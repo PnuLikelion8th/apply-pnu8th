@@ -12,9 +12,15 @@ PNULikeLion-applyform
 
 
 {% block contents %}
+{% if user.profile.applyform %}
+<h1>
+    지원서 수정
+</h1>
+{%else%}
 <h1>
     지원서 작성
 </h1>
+{%endif%}
 <div>
 
     <div class="card custom_card" style="width: 18rem;">
@@ -39,7 +45,7 @@ PNULikeLion-applyform
                 <div class="apply_label">
                     {{forloop.counter0}} . {{i.label}}
                 </div>
-                {%if i.label == "본인을 나타낼 수 있는 포트폴리오를 첨부해주세요(URL의 경우 캡쳐후 첨부)(선택사항)" %}
+                {%if i.label == "본인을 나타낼 수 있는 포트폴리오를 첨부해주세요 ( URL의 경우 캡쳐후 첨부 ) ( 선택사항 )" %}
 
                 {{i}}
                 <div class="cus-file-upload-box">
@@ -52,11 +58,13 @@ PNULikeLion-applyform
                         </div>
                     </label>
                 </div>
-
                 {%else%}
                     {{i}}
                 {%endif%}
-            
+                {%if i.label != "본인을 나타낼 수 있는 포트폴리오를 첨부해주세요 ( URL의 경우 캡쳐후 첨부 ) ( 선택사항 )" %}
+
+                <div class="text-counting"></div>
+                {%endif%}
             </div>
             {%else%}
                 <input type="hidden" name="author" value={{user.profile.id}}>
@@ -68,5 +76,6 @@ PNULikeLion-applyform
     <input type="submit" class="btn btn-dark custom_submit" value="제출">
 </form>
     <script src="{% static 'js/fileupload.js'%}"></script>
+    <script src="{% static 'js/counting_text.js'%}"></script>
 
 {% endblock %}

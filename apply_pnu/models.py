@@ -36,17 +36,18 @@ from django.utils import timezone
 # Create your models here.
 class ApplyForm(models.Model):
     author = models.OneToOneField(Profile, on_delete=models.CASCADE)
-    introduce = models.TextField('자기소개 및 지원동기(최대 1000자)', max_length=1000)
-    position = models.TextField('기획자/개발자/디자이너 중 가장 본인에게 가깝다고 생각하는 것을 고르고, 관련 근거를 서술하시오(최대 500자)', max_length=500)
-    goal = models.TextField('코딩을 배워서 무엇을 하고 싶은지 구체적으로 서술하시오(최대 500자)', max_length=500)
-    plan = models.TextField('향후 1년계획 (학생회,동아리,아르바이트 등 최대 500자)', max_length=500)
-    team = models.TextField('참여했던 팀 활동 중 가장 기억에 남는 경험과 느낌점을 서술하시오(최대500자)', max_length=500)
-    concept = models.TextField('본인은 멋쟁이사자처럼 동아리내 어떤 캐릭터일지 서술하시오(최대 500자)', max_length=500)
+    introduce = models.TextField('자기소개 및 지원동기 ( 최대 1000자 )', max_length=1000)
+    position = models.TextField(
+        '기획자/개발자/디자이너 중 가장 본인에게 가깝다고 생각하는 직군을 고르고, 관련 근거를 작성해주세요 ( 최대 500자 )', max_length=500)
+    goal = models.TextField(
+        '코딩을 배워서 무엇을 하고 싶은지 구체적으로 작성해주세요 ( 최대 500자 )', max_length=500)
+    team = models.TextField('참여했던 팀 활동 중 가장 기억에 남는 경험과 느낌점, 그리고 본인의 캐릭터는 무엇이었는지 작성해주세요 ( 최대500자 )', max_length=500)
 
-    portfolio = models.FileField('본인을 나타낼 수 있는 포트폴리오를 첨부해주세요(URL의 경우 캡쳐후 첨부)(선택사항)', blank= True, upload_to='portfolio/')
-    interview = models.TextField('면접가능시간( 3월 28일(토), 3월 29일(일) )을 작성해주세요', max_length=255)
-    experience = models.TextField('프로그래밍 경험이 있다면 기술스택과 수준을, 프로그래밍 경험이 없다면 기대감과 각오를 적어주세요', max_length=1000)
-    schedule = models.TextField('1학기 고정스케줄(요일&시간)', max_length=1000)
+    portfolio = models.FileField('본인을 나타낼 수 있는 포트폴리오를 첨부해주세요 ( URL의 경우 캡쳐후 첨부 ) ( 선택사항 )', blank= True, upload_to='portfolio/')
+    interview = models.TextField('면접가능시간( 3월 28일-토, 3월 29일-일 )을 작성해주세요', max_length=255)
+    experience = models.TextField('프로그래밍 경험이 있다면 기술스택과 수준을, 프로그래밍 경험이 없다면 기대감과 각오를 적어주세요 ( 향후 교육에 참고사항일뿐 평가요소는 아닙니다 ) ', max_length=1000)
+    schedule = models.TextField(
+        '2020년도 학생회,동아리,아르바이트 등의 고정스케줄 ( 요일&시간 ) ', max_length=1000)
 
     created = models.DateTimeField(editable=False, default=timezone.now)
     modified = models.DateTimeField(default=timezone.now)
