@@ -70,3 +70,15 @@ html,body{
 .navbar-b.navbar-reduce .nav-link{
     color:#34558b !important;
 }
+
+::-webkit-scrollbar {
+    width: 5px;  /* 세로축 스크롤바 길이 */
+    height: 20px;  /* 가로축 스크롤바 길이 */
+  }
+  ::-webkit-scrollbar-track-piece {
+    background-color: #dddddd;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #34558b;
+  }
