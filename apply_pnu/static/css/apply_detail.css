@@ -147,3 +147,8 @@ input[id="portfolio-clear_id"]:checked + #portfolio-clear_id::after{
   textarea::-webkit-scrollbar-track-piece {
     background-color: #dddddd;
   }
+
+  .form-control > a,
+  .form-control > a:visited {
+    color:#3587fa;
+  }
