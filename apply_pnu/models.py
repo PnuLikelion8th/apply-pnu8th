@@ -41,9 +41,9 @@ class ApplyForm(models.Model):
         '기획자/개발자/디자이너 중 가장 본인에게 가깝다고 생각하는 직군을 고르고, 관련 근거를 작성해주세요 ( 최대 500자 )', max_length=500)
     goal = models.TextField(
         '코딩을 배워서 무엇을 하고 싶은지 구체적으로 작성해주세요 ( 최대 500자 )', max_length=500)
-    team = models.TextField('참여했던 팀 활동 중 가장 기억에 남는 경험과 느낌점, 그리고 본인의 캐릭터는 무엇이었는지 작성해주세요 ( 최대500자 )', max_length=500)
+    team = models.TextField('참여했던 팀 활동 중 가장 기억에 남는 경험과 느낀점, 그리고 본인의 캐릭터는 무엇이었는지 작성해주세요 ( 최대500자 )', max_length=500)
 
-    portfolio = models.FileField('본인을 나타낼 수 있는 포트폴리오를 첨부해주세요 ( URL의 경우 캡쳐후 첨부 ) ( 선택사항 )', blank= True, upload_to='portfolio/')
+    portfolio = models.FileField('본인을 나타낼 수 있는 포트폴리오를 첨부해주세요 ( URL의 경우 캡쳐후 첨부 )', blank= True, upload_to='portfolio/')
     interview = models.TextField('면접가능시간( 3월 28일-토, 3월 29일-일 )을 작성해주세요', max_length=255)
     experience = models.TextField('프로그래밍 경험이 있다면 기술스택과 수준을, 프로그래밍 경험이 없다면 기대감과 각오를 적어주세요 ( 향후 교육에 참고사항일뿐 평가요소는 아닙니다 ) ', max_length=1000)
     schedule = models.TextField(
