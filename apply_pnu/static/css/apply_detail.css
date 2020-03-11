@@ -35,7 +35,7 @@
     background-color: #34558b;
 }
 .apply_label{
-    font-size:0.95rem;
+    font-size:1.2rem;
 }
 .readonly_form{
     height:auto;
@@ -151,4 +151,11 @@ input[id="portfolio-clear_id"]:checked + #portfolio-clear_id::after{
   .form-control > a,
   .form-control > a:visited {
     color:#3587fa;
+  }
+
+
+  @media(max-width:768px){
+      .apply_label{
+    font-size:0.9rem;
+}
   }
