@@ -159,3 +159,9 @@ input[id="portfolio-clear_id"]:checked + #portfolio-clear_id::after{
     font-size:0.9rem;
 }
   }
+
+  .apply_errors{
+      font-size:0.85rem;
+    color:#5789da;
+
+    }
