@@ -44,8 +44,11 @@ PNULikeLion-applyform
             <div class="apply_detail_compo">
                 <div class="apply_label">
                     {{forloop.counter0}} . {{i.label}}
+                    <div class="apply_errors">
+                        {{i.errors}}
+                    </div>
                 </div>
-                {%if i.label == "본인을 나타낼 수 있는 포트폴리오를 첨부해주세요 ( URL의 경우 캡쳐후 첨부 ) ( 선택사항 )" %}
+                {%if i.label == "본인을 나타낼 수 있는 포트폴리오를 첨부해주세요 ( URL의 경우 캡쳐후 첨부 )" %}
 
                 {{i}}
                 <div class="cus-file-upload-box">
@@ -61,7 +64,7 @@ PNULikeLion-applyform
                 {%else%}
                     {{i}}
                 {%endif%}
-                {%if i.label != "본인을 나타낼 수 있는 포트폴리오를 첨부해주세요 ( URL의 경우 캡쳐후 첨부 ) ( 선택사항 )" %}
+                {%if i.label != "본인을 나타낼 수 있는 포트폴리오를 첨부해주세요 ( URL의 경우 캡쳐후 첨부 )" %}
 
                 <div class="text-counting"></div>
                 {%endif%}
