@@ -28,8 +28,7 @@ urlpatterns = [
     path('profile_update', apply_pnu.views.profile_update, name ="profile_update"),
     
     path('logout/', auth_views.LogoutView.as_view(), name="logout"),
-    # path('account_main', apply_pnu.views.account_main, name="account_main"),
-    # path('apply/', apply_pnu.views.apply,name="apply"),
+
     path('apply/', apply_pnu.views.Apply.as_view(), name="apply"),
     path('apply_detail/<int:pk>',
          apply_pnu.views.ApplyDetail.as_view(), name="apply_detail"),

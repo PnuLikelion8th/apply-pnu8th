@@ -21,7 +21,6 @@ def index(request):
     return render(request, 'index.html')
 
 
-
 def signup(request):
     if request.method == 'POST':
         registerform = RegisterForm(request.POST)
@@ -86,6 +85,8 @@ class Apply(CreateView):
     success_url = reverse_lazy('index')
 
     def get(self, request, *args, **kwargs):
+        
+        return redirect('index')
         try:
             if request.user.profile.applyform:
                 return redirect('apply_edit' ,pk=request.user.profile.applyform.id)
@@ -104,9 +105,13 @@ class Apply(CreateView):
 
 @method_decorator(user_passes_test(lambda u: u.is_superuser), name="get")
 class ApplyList(ListView):
+    
     template_name="apply_list.html"
     context_object_name = "apply_all"
     model = ApplyForm
+    def get_queryset(self): # 컨텍스트 오버라이딩
+        return ApplyForm.objects.order_by('modified')
+    
 
 
 
@@ -134,6 +139,8 @@ class ApplyEdit(UpdateView):
     success_url = reverse_lazy('index')
 
     def get(self, request, *args, **kwargs):
+        
+        return redirect('index')
         if kwargs['pk'] == request.user.profile.applyform.id:
             print("1*********************************8")
             return super().get(request, *args, **kwargs)

@@ -78,13 +78,13 @@
                   </a>
               </li>
               {%endif%}
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                   {%if user.profile.applyform %}
                   <a class="nav-link js-scroll" href="{% url 'apply_edit' user.profile.applyform.id %}">수정하기</a>
                   {%else%}
                   <a class="nav-link js-scroll" href="{% url 'apply' %}">지원하기</a>
                   {%endif%}
-              </li>
+              </li> -->
               <li class="nav-item">
                   <a class="nav-link js-scroll" href="{% url 'logout' %}">로그아웃</a>
               </li>
