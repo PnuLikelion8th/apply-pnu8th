@@ -1,3 +1,9 @@
-.custom_card{
-    display: inline-flex;
+.custom_card {
+  display: inline-flex;
+  margin: 20px 10px 0;
+}
+
+.card-body {
+  width: 300px;
+  height: 200px;
 }
